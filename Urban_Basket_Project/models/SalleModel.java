@@ -1,9 +1,9 @@
 package models;
 
 /**
- * Classe du Model Reservation
+ * Interface du Model Reservation
  * @author BERGER Nicolas
  * @author SOLIVEAU Nicolas
  */
-public class SalleModel {
+public interface SalleModel {
 }
