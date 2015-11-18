@@ -6,9 +6,9 @@ package models;
  * @author SOLIVEAU Nicolas
  */
 public class User implements UserModel {
+    String pseudo;
     String nom;
     String prenom;
-    String pseudo;
     String dateNaissance;
     String mail;
 }

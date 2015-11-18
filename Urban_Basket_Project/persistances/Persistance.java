@@ -1,5 +1,5 @@
 package persistances;
 
-public class Persistance {
+public interface Persistance {
 
 }
