@@ -1,10 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
+<script src="http://maps.googleapis.com/maps/api/js"></script>
+<script>
+	function initialize() {
+		var mapProp = {
+			center : new google.maps.LatLng(48.858565, 2.347198),
+			zoom : 16,
+			mapTypeId : google.maps.MapTypeId.ROADMAP
+		};
+		var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
 
+		//marker
+		var marker = new google.maps.Marker({position : mapProp.center, animation : google.maps.Animation.DROP});
+		marker.setMap(map);
+
+		//popup
+		var infowindow = new google.maps.InfoWindow({content : "Hello World!"});
+		google.maps.event.addListener(marker, 'click', function() {infowindow.open(map, marker);});
+	}
+
+	google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+</head>
+
+<body>
+	<div id="googleMap" style="width: 500px; height: 380px;"></div>
 </body>
+
 </html>
