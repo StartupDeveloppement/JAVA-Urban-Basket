@@ -1,7 +1,6 @@
 package models;
 
-import java.sql.Timestamp;
-import java.util.Date;
+import java.time.LocalDateTime;
 
 /**
  * Classe implémentant ReservationModel
@@ -9,17 +8,16 @@ import java.util.Date;
  * @author SOLIVEAU Nicolas
  */
 public class Reservation {
-    Timestamp date;
+    LocalDateTime dateTime;
     UserModel user;
     SalleModel salle;
     int duree;
 
-    public Reservation(Timestamp date, UserModel user, SalleModel salle, int duree) {
-        this.date = date;
+    public Reservation(LocalDateTime dateTime, UserModel user, SalleModel salle, int duree) {
+        this.dateTime = dateTime;
         this.user = user;
         this.salle = salle;
         this.duree = duree;
     }
-
 
 }

@@ -71,7 +71,7 @@ public class OraclePersistance implements Persistance {
     		pReservation.setInt(2, salle.getId());
     		pReservation.setTimestamp(3, Timestamp.valueOf(dateTime));
     		ResultSet res = pReservation.executeQuery();
-			return (null != res) ? new Reservation(dateTime, user, salle) : null;
+			return (null != res) ? new Reservation(dateTime, user, salle, res.getInt(5)) : null;
     	}catch(Exception e){
     		throw new Exception(e.getMessage());
     	}
