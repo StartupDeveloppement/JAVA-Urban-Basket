@@ -5,7 +5,8 @@ package models;
  * @author BERGER Nicolas
  * @author SOLIVEAU Nicolas
  */
-public class Salle {
+public class Salle implements SalleModel{
+	private int id;
     private String proprietaire;
     private int nbTerrains;
     private Adresse adresse;
@@ -72,4 +73,12 @@ public class Salle {
     public void setNbTerrains(int nbTerrains) {
         this.nbTerrains = nbTerrains;
     }
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
 }
