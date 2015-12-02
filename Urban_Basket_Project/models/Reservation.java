@@ -1,19 +1,19 @@
 package models;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 /**
  * Classe impl�mentant ReservationModel
  * @author BERGER Nicolas
  * @author SOLIVEAU Nicolas
  */
-public class Reservation {
-    Date date;
+public class Reservation implements ReservationModel{
+    LocalDateTime dateTime;
     UserModel user;
     SalleModel salle;
 
-    public Reservation(Date date, UserModel user, SalleModel salle) {
-        this.date = date;
+    public Reservation(LocalDateTime dateTime, UserModel user, SalleModel salle) {
+        this.dateTime = dateTime;
         this.user = user;
         this.salle = salle;
     }

@@ -13,8 +13,8 @@ public class AuthService {
 
     private Persistance persistance;
 
-    public AuthService(Persistance persistance){
-        this.persistance = persistance;
+    public AuthService(){
+        this.persistance = OraclePersistance.getInstance();
     }
 
     public User login(String pseudo, String mdp) throws Exception {
