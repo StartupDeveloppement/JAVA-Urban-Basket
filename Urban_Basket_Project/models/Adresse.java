@@ -1,5 +1,11 @@
 package models;
 
+/**
+ * Classe représentant une Adresse
+ * @author BERGER Nicolas
+ * @author SOLIVEAU Nicolas
+ */
+
 public class Adresse {
 
 	private int numero;
@@ -45,5 +51,8 @@ public class Adresse {
 	}
 	public void setPays(String pays) {
 		this.pays = pays;
+	}
+	public String toString(){
+		return this.numero+" "+this.rue+" "+this.codePostal+" "+this.ville+" "+this.pays;
 	}
 }

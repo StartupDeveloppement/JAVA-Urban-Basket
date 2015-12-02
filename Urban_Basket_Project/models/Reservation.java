@@ -1,21 +1,24 @@
 package models;
 
+import java.sql.Timestamp;
 import java.util.Date;
 
 /**
- * Classe impl�mentant ReservationModel
+ * Classe implémentant ReservationModel
  * @author BERGER Nicolas
  * @author SOLIVEAU Nicolas
  */
 public class Reservation {
-    Date date;
+    Timestamp date;
     UserModel user;
     SalleModel salle;
+    int duree;
 
-    public Reservation(Date date, UserModel user, SalleModel salle) {
+    public Reservation(Timestamp date, UserModel user, SalleModel salle, int duree) {
         this.date = date;
         this.user = user;
         this.salle = salle;
+        this.duree = duree;
     }
 
 

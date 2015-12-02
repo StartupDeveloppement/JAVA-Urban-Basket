@@ -1,18 +1,18 @@
 package models;
 
 /**
- * Classe implémentant SalleModel
+ * Classe implï¿½mentant SalleModel
  * @author BERGER Nicolas
  * @author SOLIVEAU Nicolas
  */
 public class Salle {
     private String proprietaire;
     private int nbTerrains;
-    private String adresse;
+    private Adresse adresse;
     private long lattitude;
     private long longitude;
 
-    public Salle(String proprietaire, int nbTerrains, String adresse){
+    public Salle(String proprietaire, int nbTerrains, Adresse adresse){
         this.proprietaire = proprietaire;
         this.nbTerrains = nbTerrains;
         this.adresse = adresse;
@@ -25,7 +25,7 @@ public class Salle {
         this.longitude = longitude;
     }
 
-    public Salle(String proprietaire, int nbTerrains,String adresse, long lattitude, long longitude){
+    public Salle(String proprietaire, int nbTerrains,Adresse adresse, long lattitude, long longitude){
         this.proprietaire = proprietaire;
         this.nbTerrains = nbTerrains;
         this.adresse = adresse;
@@ -49,11 +49,11 @@ public class Salle {
         this.longitude = longitude;
     }
 
-    public String getAdresse() {
+    public Adresse getAdresse() {
         return adresse;
     }
 
-    public void setAdresse(String adresse) {
+    public void setAdresse(Adresse adresse) {
         this.adresse = adresse;
     }
 
