@@ -13,25 +13,26 @@ public class Salle implements SalleModel{
     private long lattitude;
     private long longitude;
 
+    //Privé pour forcer la saisie d'une adresse ou latitude/longitude
+    private Salle(String proprietaire, int nbTerrains){
+    	this.proprietaire = proprietaire;
+    	this.nbTerrains = nbTerrains;
+    }
+    
     public Salle(String proprietaire, int nbTerrains, Adresse adresse){
-        this.proprietaire = proprietaire;
-        this.nbTerrains = nbTerrains;
+        this(proprietaire, nbTerrains);
         this.adresse = adresse;
     }
 
     public Salle(String proprietaire, int nbTerrains,long lattitude, long longitude){
-        this.proprietaire = proprietaire;
-        this.nbTerrains = nbTerrains;
+    	this(proprietaire, nbTerrains);
         this.lattitude = lattitude;
         this.longitude = longitude;
     }
 
     public Salle(String proprietaire, int nbTerrains,Adresse adresse, long lattitude, long longitude){
-        this.proprietaire = proprietaire;
-        this.nbTerrains = nbTerrains;
+    	this(proprietaire, nbTerrains,lattitude, longitude);
         this.adresse = adresse;
-        this.lattitude = lattitude;
-        this.longitude = longitude;
     }
 
     public String getProprietaire() {
