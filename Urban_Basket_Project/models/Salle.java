@@ -1,24 +1,37 @@
 package models;
 
+import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.table.DatabaseTable;
+
 /**
- * Classe implï¿½mentant SalleModel
+ * Classe implementant SalleModel
  * @author BERGER Nicolas
  * @author SOLIVEAU Nicolas
  */
+@DatabaseTable(tableName="SALLE")
 public class Salle implements SalleModel{
+    @DatabaseField(generatedId = true)
 	private int id;
+    @DatabaseField
     private String proprietaire;
+    @DatabaseField
     private int nbTerrains;
+    @DatabaseField
     private Adresse adresse;
+    @DatabaseField
     private long lattitude;
+    @DatabaseField
     private long longitude;
 
-    //Privé pour forcer la saisie d'une adresse ou latitude/longitude
+    //No args constructor for ORMlite
+    public Salle(){}
+
+    //Private pour forcer la saisie d'une adresse ou latitude/longitude
     private Salle(String proprietaire, int nbTerrains){
     	this.proprietaire = proprietaire;
     	this.nbTerrains = nbTerrains;
     }
-    
+
     public Salle(String proprietaire, int nbTerrains, Adresse adresse){
         this(proprietaire, nbTerrains);
         this.adresse = adresse;
