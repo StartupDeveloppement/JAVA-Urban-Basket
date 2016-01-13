@@ -6,7 +6,7 @@ import com.j256.ormlite.table.DatabaseTable;
 import interfaces.DBClass;
 
 /**
- * Classe représentant une Adresse
+ * Classe representant une Adresse
  * @author BERGER Nicolas
  * @author SOLIVEAU Nicolas
  */

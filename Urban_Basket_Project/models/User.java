@@ -6,7 +6,7 @@ import com.j256.ormlite.table.DatabaseTable;
 import interfaces.DBClass;
 
 /**
- * Classe impl�mentant UserModel
+ * Classe implementant UserModel
  * @author BERGER Nicolas
  * @author SOLIVEAU Nicolas
  */
