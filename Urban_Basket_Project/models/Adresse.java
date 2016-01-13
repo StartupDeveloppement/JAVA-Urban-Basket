@@ -69,10 +69,10 @@ public class Adresse implements DBClass{
 	public String toString(){
 		return this.numero+" "+this.rue+" "+this.codePostal+" "+this.ville+" "+this.pays;
 	}
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 }

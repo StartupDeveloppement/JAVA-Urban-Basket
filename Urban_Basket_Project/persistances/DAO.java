@@ -1,6 +1,7 @@
 package persistances;
 
 import java.sql.SQLException;
+import java.util.Collections;
 import java.util.List;
 
 import com.j256.ormlite.dao.Dao;
@@ -20,8 +21,31 @@ public class DAO{
 		return null;
 	}
 	
-	public List<Object> getAllItems(DBClass object) throws SQLException{
-		Dao dao = this.createDAO(object);
-		return (List<Object>)dao.queryForAll();
+	public synchronized List<Object> getAllItems(DBClass item){
+		try {
+			Dao dao = this.createDAO(item);
+			return (List<Object>)dao.queryForAll();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return Collections.emptyList();
 	}
+	
+	@SuppressWarnings("unchecked")
+	public synchronized void createorUpdateItem(DBClass item){
+		try {
+			this.createDAO(item).createOrUpdate(item);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public synchronized void deleteItem(DBClass item){
+		try {
+			Dao dao = this.createDAO(item);
+			dao.delete(item);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}	
 }

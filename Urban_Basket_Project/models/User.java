@@ -84,4 +84,9 @@ public class User implements DBClass {
 	public void setMail(String mail) {
 		this.mail = mail;
 	}
+
+	@Override
+	public Object getId() {
+		return this.getPseudo();
+	}
 }

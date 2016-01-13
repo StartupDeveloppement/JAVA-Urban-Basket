@@ -18,7 +18,7 @@ public class Salle implements DBClass{
     private String proprietaire;
     @DatabaseField
     private int nbTerrains;
-    @DatabaseField
+    @DatabaseField(canBeNull=false, foreign=true, foreignAutoCreate=true, foreignAutoRefresh=true)
     private Adresse adresse;
     @DatabaseField
     private long lattitude;
@@ -90,11 +90,15 @@ public class Salle implements DBClass{
         this.nbTerrains = nbTerrains;
     }
 
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
+	}
+	
+	public String toString(){
+		return this.getAdresse().toString();
 	}
 }
