@@ -1,7 +1,6 @@
 package services;
 
 import models.User;
-import persistances.OraclePersistance;
 import persistances.Persistance;
 
 /**
@@ -14,7 +13,7 @@ public class AuthService {
     private Persistance persistance;
 
     public AuthService(){
-        this.persistance = OraclePersistance.getInstance();
+//        this.persistance = OraclePersistance.getInstance();
     }
 
     public User login(String pseudo, String mdp) throws Exception {

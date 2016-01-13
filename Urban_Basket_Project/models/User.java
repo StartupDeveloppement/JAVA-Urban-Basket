@@ -3,6 +3,8 @@ package models;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
+import interfaces.DBClass;
+
 /**
  * Classe impl�mentant UserModel
  * @author BERGER Nicolas
@@ -10,7 +12,7 @@ import com.j256.ormlite.table.DatabaseTable;
  */
 
 @DatabaseTable(tableName="USER")
-public class User implements UserModel {
+public class User implements DBClass {
 	@DatabaseField(id=true)	
 	private String pseudo;
 	@DatabaseField

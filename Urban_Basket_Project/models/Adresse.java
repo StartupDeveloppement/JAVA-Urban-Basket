@@ -3,6 +3,8 @@ package models;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
+import interfaces.DBClass;
+
 /**
  * Classe représentant une Adresse
  * @author BERGER Nicolas
@@ -10,9 +12,9 @@ import com.j256.ormlite.table.DatabaseTable;
  */
 
 @DatabaseTable(tableName="ADRESSE")
-public class Adresse {
+public class Adresse implements DBClass{
 	@DatabaseField(generatedId=true)
-	private int id;
+	private Integer id;
 	@DatabaseField
 	private int numero;
 	@DatabaseField

@@ -4,7 +4,6 @@ import java.time.LocalDateTime;
 
 import models.Salle;
 import models.User;
-import persistances.OraclePersistance;
 import persistances.Persistance;
 
 /**
@@ -17,7 +16,7 @@ public class ReserverService {
 	private Persistance persistance;
 
     public ReserverService(){
-        this.persistance = OraclePersistance.getInstance();
+//        this.persistance = OraclePersistance.getInstance();
     }
     
 	public boolean reserver(User user, Salle salle, LocalDateTime dateTime) throws Exception{

@@ -5,6 +5,8 @@ import java.time.LocalDateTime;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
+import interfaces.DBClass;
+
 /**
  * Classe implémentant ReservationModel
  * @author BERGER Nicolas
@@ -12,9 +14,9 @@ import com.j256.ormlite.table.DatabaseTable;
  */
 
 @DatabaseTable(tableName="RESERVATION")
-public class Reservation {
+public class Reservation implements DBClass {
 	@DatabaseField(generatedId=true)
-	private int id;
+	private Integer id;
 	@DatabaseField
     private LocalDateTime dateResa_Deb;
 	@DatabaseField

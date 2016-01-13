@@ -3,13 +3,15 @@ package models;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
+import interfaces.DBClass;
+
 /**
  * Classe implementant SalleModel
  * @author BERGER Nicolas
  * @author SOLIVEAU Nicolas
  */
 @DatabaseTable(tableName="SALLE")
-public class Salle implements SalleModel{
+public class Salle implements DBClass{
     @DatabaseField(generatedId = true)
 	private int id;
     @DatabaseField
