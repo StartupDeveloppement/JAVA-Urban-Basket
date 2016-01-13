@@ -1,18 +1,31 @@
 package models;
 
+import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.table.DatabaseTable;
+
 /**
  * Classe impl�mentant UserModel
  * @author BERGER Nicolas
  * @author SOLIVEAU Nicolas
  */
-public class User implements UserModel {
-    String pseudo;
-    String mdp;
-    String nom;
-    String prenom;
-    String dateNaissance;
-    String mail;
 
+@DatabaseTable(tableName="USER")
+public class User implements UserModel {
+	@DatabaseField(id=true)	
+	private String pseudo;
+	@DatabaseField
+	private String mdp;
+	@DatabaseField
+	private String nom;
+	@DatabaseField
+	private String prenom;
+	@DatabaseField
+	private String dateNaissance;
+	@DatabaseField
+	private String mail;
+
+	public User(){}
+	
     public User(String pseudo, String mdp, String nom, String prenom, String dateNaissance, String mail) {
         this.pseudo = pseudo;
         this.mdp = mdp;

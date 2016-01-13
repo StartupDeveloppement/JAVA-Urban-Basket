@@ -1,5 +1,6 @@
 package models;
 
+import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
 /**
@@ -10,12 +11,20 @@ import com.j256.ormlite.table.DatabaseTable;
 
 @DatabaseTable(tableName="ADRESSE")
 public class Adresse {
-
+	@DatabaseField(generatedId=true)
+	private int id;
+	@DatabaseField
 	private int numero;
+	@DatabaseField
 	private String rue;
+	@DatabaseField
 	private int codePostal;
+	@DatabaseField
 	private String ville;
+	@DatabaseField
 	private String pays;
+	
+	public Adresse(){}
 	
 	public Adresse(int num, String rue, int cP, String ville, String pays){
 		this.numero = num;
@@ -57,5 +66,11 @@ public class Adresse {
 	}
 	public String toString(){
 		return this.numero+" "+this.rue+" "+this.codePostal+" "+this.ville+" "+this.pays;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
 	}
 }

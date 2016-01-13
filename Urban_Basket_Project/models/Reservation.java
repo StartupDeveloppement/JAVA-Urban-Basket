@@ -2,6 +2,7 @@ package models;
 
 import java.time.LocalDateTime;
 
+import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
 /**
@@ -10,13 +11,21 @@ import com.j256.ormlite.table.DatabaseTable;
  * @author SOLIVEAU Nicolas
  */
 
-@DatabaseTable
+@DatabaseTable(tableName="RESERVATION")
 public class Reservation {
-    LocalDateTime dateResa_Deb;
-    LocalDateTime dateResa_Fin;
-    UserModel user;
-    SalleModel salle;
+	@DatabaseField(generatedId=true)
+	private int id;
+	@DatabaseField
+    private LocalDateTime dateResa_Deb;
+	@DatabaseField
+    private LocalDateTime dateResa_Fin;
+	@DatabaseField
+    private UserModel user;
+	@DatabaseField
+    private SalleModel salle;
 
+	public Reservation(){}
+	
     public Reservation(LocalDateTime dateResa_Deb, LocalDateTime dateResa_Fin, UserModel user, SalleModel salle) {
         this.dateResa_Deb = dateResa_Deb;
         this.dateResa_Fin = dateResa_Fin;
@@ -55,5 +64,10 @@ public class Reservation {
 	public void setSalle(SalleModel salle) {
 		this.salle = salle;
 	}
-
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 }
