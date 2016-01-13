@@ -2,11 +2,15 @@ package models;
 
 import java.time.LocalDateTime;
 
+import com.j256.ormlite.table.DatabaseTable;
+
 /**
  * Classe implémentant ReservationModel
  * @author BERGER Nicolas
  * @author SOLIVEAU Nicolas
  */
+
+@DatabaseTable
 public class Reservation {
     LocalDateTime dateResa_Deb;
     LocalDateTime dateResa_Fin;

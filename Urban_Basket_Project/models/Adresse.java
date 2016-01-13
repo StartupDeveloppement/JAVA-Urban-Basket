@@ -1,11 +1,14 @@
 package models;
 
+import com.j256.ormlite.table.DatabaseTable;
+
 /**
  * Classe représentant une Adresse
  * @author BERGER Nicolas
  * @author SOLIVEAU Nicolas
  */
 
+@DatabaseTable(tableName="ADRESSE")
 public class Adresse {
 
 	private int numero;
