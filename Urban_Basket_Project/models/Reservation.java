@@ -22,13 +22,13 @@ public class Reservation implements DBClass {
 	@DatabaseField
     private LocalDateTime dateResa_Fin;
 	@DatabaseField
-    private UserModel user;
+    private User user;
 	@DatabaseField
-    private SalleModel salle;
+    private Salle salle;
 
 	public Reservation(){}
 	
-    public Reservation(LocalDateTime dateResa_Deb, LocalDateTime dateResa_Fin, UserModel user, SalleModel salle) {
+    public Reservation(LocalDateTime dateResa_Deb, LocalDateTime dateResa_Fin, User user, Salle salle) {
         this.dateResa_Deb = dateResa_Deb;
         this.dateResa_Fin = dateResa_Fin;
         this.user = user;
@@ -51,19 +51,19 @@ public class Reservation implements DBClass {
 		this.dateResa_Fin = dateResa_Fin;
 	}
 
-	public UserModel getUser() {
+	public User getUser() {
 		return user;
 	}
 
-	public void setUser(UserModel user) {
+	public void setUser(User user) {
 		this.user = user;
 	}
 
-	public SalleModel getSalle() {
+	public Salle getSalle() {
 		return salle;
 	}
 
-	public void setSalle(SalleModel salle) {
+	public void setSalle(Salle salle) {
 		this.salle = salle;
 	}
 	public Integer getId() {
