@@ -50,55 +50,44 @@ public class Salle implements DBClass{
         this.adresse = adresse;
     }
 
+	public String toString(){
+		return "Salle n°" + this.getId() + " Adresse : " + this.getAdresse().toString();
+	}
+	
     public String getProprietaire() {
         return proprietaire;
     }
-
     public void setProprietaire(String proprietaire) {
         this.proprietaire = proprietaire;
     }
-
     public long getLongitude() {
         return longitude;
     }
-
     public void setLongitude(long longitude) {
         this.longitude = longitude;
     }
-
     public Adresse getAdresse() {
         return adresse;
     }
-
     public void setAdresse(Adresse adresse) {
         this.adresse = adresse;
     }
-
     public long getLattitude() {
         return lattitude;
     }
-
     public void setLattitude(long lattitude) {
         this.lattitude = lattitude;
     }
-
     public int getNbTerrains() {
         return nbTerrains;
     }
-
     public void setNbTerrains(int nbTerrains) {
         this.nbTerrains = nbTerrains;
     }
-
 	public Integer getId() {
 		return id;
 	}
-
 	public void setId(Integer id) {
 		this.id = id;
-	}
-	
-	public String toString(){
-		return this.getAdresse().toString();
 	}
 }

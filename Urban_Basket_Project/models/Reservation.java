@@ -2,6 +2,7 @@ package models;
 
 import java.time.LocalDateTime;
 
+import com.j256.ormlite.field.DataType;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
@@ -17,13 +18,13 @@ import interfaces.DBClass;
 public class Reservation implements DBClass {
 	@DatabaseField(generatedId=true)
 	private Integer id;
-	@DatabaseField
+	@DatabaseField(dataType=DataType.SERIALIZABLE)
     private LocalDateTime dateResa_Deb;
-	@DatabaseField
+	@DatabaseField(dataType=DataType.SERIALIZABLE)
     private LocalDateTime dateResa_Fin;
-	@DatabaseField
+	@DatabaseField(canBeNull=false, foreign=true, foreignAutoRefresh=true)
     private User user;
-	@DatabaseField
+	@DatabaseField(canBeNull=false, foreign=true, foreignAutoCreate=true, foreignAutoRefresh=true)
     private Salle salle;
 
 	public Reservation(){}
@@ -35,34 +36,31 @@ public class Reservation implements DBClass {
         this.salle = salle;
     }
 
-	public LocalDateTime getDateResa_Deb() {
+    public String toString(){
+    	return "Réservation n°" + this.getId() + " Début : " + this.getDateResa_Deb() + " Fin : " + this.getDateResa_Fin() + " Salle : " + this.getSalle().getAdresse() + " Membre : " + this.getUser().toString();
+    }
+    
+    public LocalDateTime getDateResa_Deb() {
 		return dateResa_Deb;
 	}
-
 	public void setDateResa_Deb(LocalDateTime dateResa_Deb) {
 		this.dateResa_Deb = dateResa_Deb;
 	}
-
 	public LocalDateTime getDateResa_Fin() {
 		return dateResa_Fin;
 	}
-
 	public void setDateResa_Fin(LocalDateTime dateResa_Fin) {
 		this.dateResa_Fin = dateResa_Fin;
 	}
-
 	public User getUser() {
 		return user;
 	}
-
 	public void setUser(User user) {
 		this.user = user;
 	}
-
 	public Salle getSalle() {
 		return salle;
 	}
-
 	public void setSalle(Salle salle) {
 		this.salle = salle;
 	}
