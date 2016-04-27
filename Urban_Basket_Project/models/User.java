@@ -36,6 +36,10 @@ public class User implements DBClass {
         this.dateNaissance = dateNaissance;
         this.mail = mail;
     }
+    
+    public User(String pseudo, String mdp) {
+    	this(pseudo, mdp, null, null, null, null);
+    }
 
     public String toString(){
     	return this.getNom() + " " + this.getPrenom();

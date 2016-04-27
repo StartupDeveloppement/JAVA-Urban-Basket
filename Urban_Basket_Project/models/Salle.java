@@ -21,9 +21,9 @@ public class Salle implements DBClass{
     @DatabaseField(canBeNull=false, foreign=true, foreignAutoCreate=true, foreignAutoRefresh=true)
     private Adresse adresse;
     @DatabaseField
-    private long lattitude;
+    private double latitude;
     @DatabaseField
-    private long longitude;
+    private double longitude;
 
     //No args constructor for ORMlite
     public Salle(){}
@@ -39,14 +39,14 @@ public class Salle implements DBClass{
         this.adresse = adresse;
     }
 
-    public Salle(String proprietaire, int nbTerrains,long lattitude, long longitude){
+    public Salle(String proprietaire, int nbTerrains,double latitude, double longitude){
     	this(proprietaire, nbTerrains);
-        this.lattitude = lattitude;
+        this.latitude = latitude;
         this.longitude = longitude;
     }
 
-    public Salle(String proprietaire, int nbTerrains,Adresse adresse, long lattitude, long longitude){
-    	this(proprietaire, nbTerrains,lattitude, longitude);
+    public Salle(String proprietaire, int nbTerrains,Adresse adresse, double latitude, double longitude){
+    	this(proprietaire, nbTerrains,latitude, longitude);
         this.adresse = adresse;
     }
 
@@ -60,10 +60,10 @@ public class Salle implements DBClass{
     public void setProprietaire(String proprietaire) {
         this.proprietaire = proprietaire;
     }
-    public long getLongitude() {
+    public double getLongitude() {
         return longitude;
     }
-    public void setLongitude(long longitude) {
+    public void setLongitude(double longitude) {
         this.longitude = longitude;
     }
     public Adresse getAdresse() {
@@ -72,11 +72,11 @@ public class Salle implements DBClass{
     public void setAdresse(Adresse adresse) {
         this.adresse = adresse;
     }
-    public long getLattitude() {
-        return lattitude;
+    public double getLatitude() {
+        return latitude;
     }
-    public void setLattitude(long lattitude) {
-        this.lattitude = lattitude;
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
     }
     public int getNbTerrains() {
         return nbTerrains;
